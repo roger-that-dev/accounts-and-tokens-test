@@ -59,6 +59,10 @@ dependencies {
     // Token SDK dependencies.
     cordaCompile "com.r3.tokens-sdk:money:$tokens_sdk_version"
     cordaCompile "com.r3.tokens-sdk:workflow:$tokens_sdk_version"
+
+    // Accounts SDK dependencies.
+    cordaCompile "com.r3.accounts-sdk:contracts:$accounts_sdk_version"
+    cordaCompile "com.r3.accounts-sdk:workflows:$accounts_sdk_version"
 }
 
 task integrationTest(type: Test, dependsOn: []) {
