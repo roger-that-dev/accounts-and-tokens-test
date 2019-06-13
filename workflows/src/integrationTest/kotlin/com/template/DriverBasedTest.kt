@@ -1,13 +1,13 @@
 package com.template
 
-import com.r3.corda.sdk.token.contracts.states.FungibleToken
-import com.r3.corda.sdk.token.contracts.utilities.heldBy
-import com.r3.corda.sdk.token.contracts.utilities.issuedBy
-import com.r3.corda.sdk.token.contracts.utilities.of
-import com.r3.corda.sdk.token.money.GBP
-import com.r3.corda.sdk.token.workflow.flows.shell.IssueTokens
-import com.r3.corda.sdk.token.workflow.flows.shell.MoveFungibleTokens
-import com.r3.corda.sdk.token.workflow.types.PartyAndAmount
+import com.r3.corda.lib.tokens.contracts.states.FungibleToken
+import com.r3.corda.lib.tokens.contracts.utilities.heldBy
+import com.r3.corda.lib.tokens.contracts.utilities.issuedBy
+import com.r3.corda.lib.tokens.contracts.utilities.of
+import com.r3.corda.lib.tokens.money.GBP
+import com.r3.corda.lib.tokens.workflows.flows.shell.IssueTokens
+import com.r3.corda.lib.tokens.workflows.flows.shell.MoveFungibleTokens
+import com.r3.corda.lib.tokens.workflows.types.PartyAndAmount
 import net.corda.accounts.workflows.externalIdCriteria
 import net.corda.accounts.workflows.flows.CreateAccount
 import net.corda.accounts.workflows.flows.OurAccounts
@@ -52,9 +52,9 @@ class IntegrationTest {
     private val nodeParams = listOf(partyA, partyB, issuer)
 
     private val defaultCorDapps = listOf(
-            TestCordapp.findCordapp("com.r3.corda.sdk.token.workflow"),
-            TestCordapp.findCordapp("com.r3.corda.sdk.token.contracts"),
-            TestCordapp.findCordapp("com.r3.corda.sdk.token.money"),
+            TestCordapp.findCordapp("com.r3.corda.lib.tokens.workflows"),
+            TestCordapp.findCordapp("com.r3.corda.lib.tokens.contracts"),
+            TestCordapp.findCordapp("com.r3.corda.lib.tokens.money"),
             TestCordapp.findCordapp("net.corda.accounts.contracts"),
             TestCordapp.findCordapp("net.corda.accounts.workflows")
     )
