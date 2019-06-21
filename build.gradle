@@ -2,9 +2,9 @@ buildscript {
     ext {
         corda_release_group = 'net.corda'
         // Will revert to Corda 4.1 when it is available.
-        corda_release_version = '4.1-RC03'
+        corda_release_version = '5.0-SNAPSHOT'
         tokens_release_version = 'com.r3.corda.lib.tokens'
-        tokens_sdk_version = '1.0-SNAPSHOT'
+        tokens_sdk_version = '1.0-RC03'
         accounts_sdk_version = '1.0-SNAPSHOT'
         corda_gradle_plugins_version = '4.0.42'
         kotlin_version = '1.2.71'
@@ -21,6 +21,7 @@ buildscript {
         mavenCentral()
         jcenter()
         maven { url 'https://ci-artifactory.corda.r3cev.com/artifactory/corda' }
+        maven { url "https://repo.gradle.org/gradle/libs-releases-local/" }
     }
 
     dependencies {
@@ -43,6 +44,7 @@ allprojects {
         // Can be removed post-release - used to get nightly snapshot build.
         maven { url 'https://ci-artifactory.corda.r3cev.com/artifactory/corda-tokens-dev' }
         maven { url 'https://jitpack.io' }
+        maven { url "https://repo.gradle.org/gradle/libs-releases-local/" }
     }
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
